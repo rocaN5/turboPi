@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Яндекс Турбо ПИ",
-  "version": "1.4",
+  "version": "1.5",
   "description": "Расширение подсвечивает ячейку группировки, от Димана 💘",
   "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["https://logistics.market.yandex.ru/sorting-center/21972131/*"],
       "js": ["content.js"],
-      "css": ["styles.css", "sortableStatus.css"]
+      "css": ["styles.css", "statusIcons.css"]
     }
   ],
   "icons": {

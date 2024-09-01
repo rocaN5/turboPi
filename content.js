@@ -142,10 +142,6 @@ function updateSpanClasses() {
         }
     });
 }
-
-// Интервал для периодической проверки
-setInterval(updateSpanClasses, 2000);
-
 // Запуск при загрузке страницы
 document.addEventListener("DOMContentLoaded", function() {
     updateSpanClasses();
@@ -179,20 +175,34 @@ function checkAndApplyClassToRows() {
     });
 }
 
-//TODO 
-
+//% Icons                                                                                                                                                                                                                       
 function setIconsToSortableStatus() {
-    const sortableStatus = document.querySelectorAll('.styles-shortStageDisplayName___H8gpe[data-e2e="sortable-table-stage-display-name"] span');
+    const sortableStatus = document.querySelectorAll('span[data-e2e="sortable-table-stage-display-name"] span');
+    const getAllRobots = document.querySelectorAll('td button[data-tid="8e34e3c2 d47a3f9b 2cf94f05 cd6e0115"].___Clickable___fcJVD.__disabled___AE_CQ');
     
+    getAllRobots.forEach(item =>{
+        item.classList.add('diman__robot')
+    })
+
     sortableStatus.forEach(item => {
+        item.classList.add('diman__lineHeightFix')
         // Проверяем, есть ли атрибут с нужным значением
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_DIRECT' ? item.classList.add('diman__emptyLotCreated') : item.classList.remove('diman__emptyLotCreated')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_WITH_COURIER_DIRECT' ? item.classList.add('diman__emptyLotCreated_sub-2') : item.classList.remove('diman__emptyLotCreated_sub-2')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTING_IN_LOT_KEEPED_DIRECT' ? item.classList.add('diman__lotFillingInHran') : item.classList.remove('diman__lotFillingInHran')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-PACKED_KEEPED_DIRECT' ? item.classList.add('diman__lotPackedKeepedDirect') : item.classList.remove('diman__lotPackedKeepedDirect')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTED_DIRECT' ? item.classList.add('diman__sortedDirect') : item.classList.remove('diman__sortedDirect')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-AWAITING_SORT_DIRECT' ? item.classList.add('diman__awaitingSort') : item.classList.remove('diman__awaitingSort')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-PREPARED_DIRECT' ? item.classList.add('diman__preparedDirect') : item.classList.remove('diman__preparedDirect')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-AWAITING_ACCEPTANCE_BY_COURIER_DIRECT' ? item.classList.add('diman__waitingCouriedAccept') : item.classList.remove('diman__waitingCouriedAccept')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SHIPPED_DIRECT' ? item.classList.add('diman__shipped') : item.classList.remove('diman__shipped')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-FINAL_ACCEPT_DIRECT' ? item.classList.add('diman__secondAccept') : item.classList.remove('diman__secondAccept')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-AWAITING_DIRECT' ? item.classList.add('diman__waitingForAccept') : item.classList.remove('diman__waitingForAccept')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-PRE_SORTED_DIRECT' ? item.classList.add('diman__predsortAccept') : item.classList.remove('diman__predsortAccept')
     });
 }
 
-// !!! Observer
+//% Observer                                                                                                                                                                                                                    
 // Функция для наблюдения за изменениями в <tbody>
 function observeTbodyChanges() {
     const tbody = document.querySelector('tbody');
@@ -208,8 +218,12 @@ function observeTbodyChanges() {
                 updateTimeElements();
                 checkAndApplyClassToRows();
                 setIconsToSortableStatus();
+                updateSpanClasses()
                 setTimeout(() => {
+                    updateTimeElements();
                     checkAndApplyClassToRows();
+                    setIconsToSortableStatus();
+                    updateSpanClasses()
                 }, 500);
             }
         }
