@@ -142,11 +142,45 @@ function updateSpanClasses() {
         }
     });
 }
-// Запуск при загрузке страницы
-document.addEventListener("DOMContentLoaded", function() {
-    updateSpanClasses();
-    sortablesTimeSeconds();
-});
+
+function updateSpanClassesInSortable() {
+    const divs = document.querySelectorAll('div[data-tid="66fcbac9 cb97fdce d276ac8a ee6163ae"]');
+    divs.forEach((div) => {
+        const text = div.textContent.trim();
+        let position;
+        let label = "";
+
+        // Проверка группы A
+        if ((position = groupA.indexOf(text)) !== -1) {
+            label = `A-${position + 1}`;
+        } 
+        // Проверка группы B
+        else if ((position = groupB.indexOf(text)) !== -1) {
+            label = `B-${position + 1 + 72}`;
+        } 
+        // Проверка группы C
+        else if ((position = groupC.indexOf(text)) !== -1) {
+            const adjustedPosition = position + 1 + 144;
+            const finalPosition = adjustedPosition >= 147 ? adjustedPosition + 1 : adjustedPosition;
+            label = `C-${finalPosition}`;
+        } 
+        // Проверка группы D
+        else if ((position = groupD.indexOf(text)) !== -1) {
+            label = `D-${position + 1 + 216}`;
+        }
+
+        // Если нашли совпадение, добавляем класс и атрибут
+        if (label) {
+            div.classList.add('diman__groupBufferSortables');
+            div.setAttribute('data-label', label);
+        } 
+        // Если не нашли совпадение, удаляем класс и атрибут
+        else {
+            div.classList.remove('diman__groupBufferSortables');
+            div.removeAttribute('data-label');
+        }
+    });
+}
 
 //!!! 
 
@@ -188,8 +222,11 @@ function setIconsToSortableStatus() {
         item.classList.add('diman__lineHeightFix')
         // Проверяем, есть ли атрибут с нужным значением
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_DIRECT' ? item.classList.add('diman__emptyLotCreated') : item.classList.remove('diman__emptyLotCreated')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_KEEPED_WITH_GROUP_DIRECT' ? item.classList.add('diman__emptyLotCreatedGroup') : item.classList.remove('diman__emptyLotCreatedGroup')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_WITH_COURIER_RETURN' ? item.classList.add('diman__emptyLotCreatedReturn') : item.classList.remove('diman__emptyLotCreatedReturn')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-LABEL_CREATED_WITH_COURIER_DIRECT' ? item.classList.add('diman__emptyLotCreated_sub-2') : item.classList.remove('diman__emptyLotCreated_sub-2')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTING_IN_LOT_KEEPED_DIRECT' ? item.classList.add('diman__lotFillingInHran') : item.classList.remove('diman__lotFillingInHran')
+        item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTING_IN_LOT_RETURN' ? item.classList.add('diman__lotReturn') : item.classList.remove('diman__lotReturn')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTING_IN_LOT_KEEPED_RETURN' ? item.classList.add('diman__lotFillingInHranReturn') : item.classList.remove('diman__lotFillingInHranReturn')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-PACKED_KEEPED_DIRECT' ? item.classList.add('diman__lotPackedKeepedDirect') : item.classList.remove('diman__lotPackedKeepedDirect')
         item.getAttribute('data-e2e-i18n-key') === 'common.sorting-center:stage-SORTED_DIRECT' ? item.classList.add('diman__sortedDirect') : item.classList.remove('diman__sortedDirect')
@@ -215,6 +252,7 @@ function setIconsToSortableStatus() {
 }
 
 //% Observer                                                                                                                                                                                                                    
+
 // Функция для наблюдения за изменениями в <tbody>
 function observeTbodyChanges() {
     const tbody = document.querySelector('tbody');
@@ -231,12 +269,14 @@ function observeTbodyChanges() {
                 checkAndApplyClassToRows();
                 setIconsToSortableStatus();
                 updateSpanClasses()
+                updateSpanClassesInSortable()
                 setTimeout(() => {
                     updateTimeElements();
                     checkAndApplyClassToRows();
                     setIconsToSortableStatus();
                     updateSpanClasses()
-                }, 500);
+                    updateSpanClassesInSortable()
+                }, 2000);
             }
         }
     });

@@ -8,9 +8,31 @@
     padding-left: 32px;
 }
 
+.diman__groupBufferSortables {
+    position: relative;
+    width: fit-content;
+}
+
+.diman__groupBufferSotrables::selection,
 .diman__groupBuffer::selection{
     background-color: #000;
     color: #fff;
+}
+
+.diman__groupBufferSortables::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    content: attr(data-label);
+    right: -30%;
+    top: -50%;
+    padding: 6px;
+    border-radius: 12px;
+    font-weight: 800;
+    border: 2px solid #000000;
+    /* background: #e5e5e5 !important; */
 }
 
 .diman__groupBuffer::before {
@@ -30,18 +52,22 @@
 }
 
 /* Цвета для разных групп */
+.diman__groupBufferSortables[data-label^="A-"]::before,
 .diman__groupBuffer[data-label^="A-"]::before {
     background: linear-gradient(45deg, #ff3b3b, #f6c525);
 }
 
+.diman__groupBufferSortables[data-label^="B-"]::before,
 .diman__groupBuffer[data-label^="B-"]::before {
     background: linear-gradient(45deg, #b0ff3b, #f6d625);
 }
 
+.diman__groupBufferSortables[data-label^="C-"]::before,
 .diman__groupBuffer[data-label^="C-"]::before {
     background: linear-gradient(45deg, #3bceff, #d864ff);
 }
 
+.diman__groupBufferSortables[data-label^="D-"]::before,
 .diman__groupBuffer[data-label^="D-"]::before {
     background: linear-gradient(38deg, #ffee3b, #fe84ff);
 }
