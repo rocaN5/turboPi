@@ -1,0 +1,623 @@
+.diman__scanLog__wrapper * {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.diman__scanLog__topTable,
+.diman__scanLog__bottomTable{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    position: sticky;
+    left: 0px;
+    --s: 56px;
+    --c1: #a7a7a7;
+    --c2: #878787;
+    --c3: #6f6f6f;
+    background: repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+     repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+     background-size: var(--s) calc(var(--s)*tan(30deg));
+    border: 1px solid #ffffff;
+    border-bottom: 1px solid #fff;
+    border-top: 0px;
+    box-shadow: 0px 10px 10px -8px;
+    z-index: 12;
+}
+
+.diman__scanLog__bottomTable{
+    border-radius: 0px 0px 10px 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 0px;
+    box-shadow: 0px -10px 10px -8px;
+}
+
+.diman__scanLog__wrapper {
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    border: 10px solid #d3d3d3;
+    background: #d3d3d3;
+    border-radius: 20px;
+    box-shadow: 0px 0px 6px 0px #000;
+    max-height: 800px;
+}
+
+/* .diman__scanLog__scroll-x{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: calc(100% - 18px);
+    height: 10px;
+    background: #d3d3d3;
+    z-index: 11;
+}
+
+.diman__scanLog__scroll-y{
+    position: absolute;
+    right: 9px;
+    bottom: 10px;
+    width: 10px;
+    height: 100%;
+    background: #d3d3d3;
+    z-index: 11;
+} */
+
+.diman__scanLog__block {
+    overflow: auto;
+    background: #d3d3d3;
+}
+
+tbody.diman__scanLog__tbody[is-background-showed="true"]{
+    background: repeating-linear-gradient(-45deg, #ffffff 0 13px, #0000000d 0 25px);
+}
+
+tbody.diman__scanLog__tbody[is-tr-bordered="true"] tr{
+    box-shadow: 0px 0px 0px 1px inset #000000;
+}
+
+.diman__scanLog__th__stickySection__info{
+    position: sticky !important;
+    top: 0;
+    left: 0px;
+    background: #000 !important;
+    color: #fff;
+    z-index: 10 !important;
+    font-size: 1.3rem !important;
+    text-align: center;
+    font-weight: 500 !important;
+    display: flex;
+    min-height: 36px;
+    padding: 0 !important;
+}
+
+.diman__scanLog__th__date{
+    min-width: 120px;
+    padding: 6px 12px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+.diman__scanLog__th__time{
+    min-width: 100px;
+    padding: 6px 12px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+.diman__scanLog__th__icon{
+    min-width: 45px;
+    padding: 6px 12px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.diman__scanLog__td__info{
+    padding: 6px 12px;
+    background: #484848;
+    color: #fff;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    --s: 56px;
+    --c1: #404040;
+    --c2: #5c5c5c;
+    --c3: #525252;
+    background: repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+    calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+    background-size: var(--s) calc(var(--s)*tan(30deg));
+}
+
+tr:hover .diman__scanLog__td__info{
+    --s: 56px; /* control the size*/
+    --c1: #1d1d1d;
+    --c2: #27282a;
+    --c3: #3c3c3c;
+}
+
+.diman__scanLog__td__date{
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.diman__scanLog__td__time{
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.diman__scanLog__td__icon{
+    min-width: 45px;
+    max-width: 45px;
+    border-right: 1px solid #fff;
+}
+
+.diman__scanLog__th__icon[is-icons-showed="false"],
+.diman__scanLog__td__icon[is-icons-showed="false"]{
+    display: none !important;
+}
+
+tbody.diman__scanLog__tbody tr:last-child td div.diman__scanLog__td__info{
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.diman__scanLog__td__stickySection__info{
+    position: sticky;
+    left: 0px;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    padding: 0 !important;
+    box-shadow: #fff 0px 0px 0px 1px, 4px 0px 10px 0px #000;
+}
+
+.diman__scanLog__td__stickySection__time{
+    position: sticky;
+    left: 119px;
+    background: #484848 !important;
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+}
+
+.diman__scanLog__th__stickySection__other{
+    position: sticky;
+    top: 0;
+    background: #ebebeb !important;
+    color: #000;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+}
+
+.diman__scanLog__th__stickySection__other::before{
+    content: '';
+    display: flex;
+    position: absolute;
+    background: #ebebeb !important;
+    color: #000;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    top: -1px;
+    left: -1px;
+    z-index: -1;
+    box-shadow: 0px 0px 0px 1px inset #e5e5e5;
+}
+
+.diman__scanLogSettings{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #e5e5e5;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px -10px, rgb(234, 234, 234) 0px 0px 0px 4px;
+    margin: 20px 0px;
+    width: calc(100% - 20px);
+}
+
+.diman__scanLog__activeButton {
+    border: 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: #fc0;
+    box-shadow: 0px 0px 6px 0px #000;
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    gap: 10px;
+    transition: 200ms scale;
+    width: fit-content;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-origin: center;
+    min-width: 285px;
+}
+
+.diman__scanLog__activeButton[scanlog="shown"]{
+    background: #c2c2c2;
+}
+
+.diman__scanLog__activeButton:disabled{
+    background-image: repeating-linear-gradient(-45deg, #fc0, #fc0 6px, #ffeba0 0, #ffeba0 12px);
+    background-size: 119px;
+    background-position: 0%;
+    animation: loadingScanLog__activeButton 5s infinite linear;
+    filter: unset !important;
+    cursor: not-allowed;
+}
+
+@keyframes loadingScanLog__activeButton{
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 100%;
+    }
+}
+
+.diman__scanLog__activeButton:hover{
+    box-shadow: 0px 0px 6px 0px, 0px 0px 2px 0px inset;
+    filter: brightness(0.9);
+}
+
+.diman__scanLog__activeButton__text{
+    min-width: 220px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.diman__scanLog__activeButton__icon,
+.diman__scanLog__callSettings__icon {
+    width: 1.5rem;
+    height: 24px;
+    transition: 200ms;
+    fill: #212121;
+}
+
+.diman__scanLog__table {
+    border-collapse: collapse;
+    background: #fafafa;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-width: max-content;
+}
+
+.diman__scanLog__table tbody tr{
+    position: relative;
+
+    &:hover{
+        background: transparent !important;
+        box-shadow: 0px 0px 10px 0px, 0px 0px 4px 2px inset !important;
+        color: #000 !important;
+        backdrop-filter: unset;
+    }
+}
+
+.diman__scanLog__thead__tr{
+    position: sticky;
+    top: 0;
+    z-index: 10 !important;
+    box-shadow: #ffffff 0px 1px 0px 0px, 0px 0px 10px 0px #000;
+}
+
+.diman__scanLog__thead__tr__th {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #eee;
+  white-space: nowrap;
+}
+
+.diman__scanLog__tbody__td {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+}
+
+table *.diman__table__short{
+    max-width: 280px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 30px;
+}
+
+.diman__scanLog__block::-webkit-scrollbar {
+    height: 30px;
+    width: 30px;
+    background: #d3d3d3;
+}
+.diman__scanLog__block::-webkit-scrollbar-corner { 
+    background: #d3d3d3;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-track:horizontal {
+    border-radius: 10px / 30px;
+    background-color: #696969;
+    border-top: 13px solid #d3d3d3;
+    border-bottom: 13px solid #d3d3d3;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-track:vertical {
+    border-radius: 30px / 10px;
+    background-color: #696969;
+    border-left: 13px solid #d3d3d3;
+    border-right: 13px solid #d3d3d3;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-track:hover {
+  background-color: #696969;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-track:active {
+  background-color: #696969;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 5px / 15px;
+    border-top: 10px solid #d3d3d3;
+    border-bottom: 10px solid #d3d3d3;
+    background-color: #000;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-thumb:vertical {
+    border-radius: 15px / 5px;
+    border-left: 10px solid #d3d3d3;
+    border-right: 10px solid #d3d3d3;
+    background-color: #000;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-thumb:hover {
+  background-color: #464646;
+}
+
+.diman__scanLog__block::-webkit-scrollbar-thumb:active {
+  background-color: #464646;
+}
+
+tr[brakeday="true"]{
+    border-top: 23px solid #fff;
+    position: relative;
+}
+
+tr[brakeday="true"]::after{
+    filter: invert(1);
+    z-index: 0 !important;
+    pointer-events: none;
+    content: '';
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 22px;
+    background: #000000;
+    left: 0;
+    top: -33.5px;
+    z-index: 0;
+    background-color: #000000;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBkPSJNMiAzMzQuNWMtMy44IDguOC0yIDE5IDQuNiAyNmwxMzYgMTQ0YzQuNSA0LjggMTAuOCA3LjUgMTcuNCA3LjVzMTIuOS0yLjcgMTcuNC03LjVsMTM2LTE0NGM2LjYtNyA4LjQtMTcuMiA0LjYtMjZzLTEyLjUtMTQuNS0yMi0xNC41bC03MiAwIDAtMjg4YzAtMTcuNy0xNC4zLTMyLTMyLTMyTDEyOCAwQzExMC4zIDAgOTYgMTQuMyA5NiAzMmwwIDI4OC03MiAwYy05LjYgMC0xOC4yIDUuNy0yMiAxNC41eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==") 0% 50% / 200px 12px repeat-x, repeating-linear-gradient(-45deg, #000, #000 5px, #161616 5px, #161616 10px) 0% 0% / auto repeat #000;
+    animation: rarwada infinite 400ms alternate linear;
+    background-position: 0% 50%, 0% 0%;
+    background-size: 110px 12px, auto;
+    background-repeat: repeat-x, repeat;
+    box-shadow: 0px 0px 10px 0px #fff inset;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+@keyframes rarwada{
+    from{
+        background-position: 0% 20%, 0% 0%;
+    }
+    to{
+        background-position: 0% 80%, 0% 0%;
+    }
+}
+
+tr[dimanOpertaion="sort"][coloredRow="true"]{
+    background: #56ff0061;
+}
+
+tr[dimanOpertaion="predsort"][coloredRow="true"]{
+    background: #ffe00052;
+}
+
+tr[dimanOpertaion="otgruzka"][coloredRow="true"]{
+    background: #12121259;
+}
+
+tr[dimanOpertaion="otgruzka-voz"][coloredRow="true"]{
+    background: #12121259;
+}
+
+tr[dimanOpertaion="podgotovkakotgruzke"][coloredRow="true"]{
+    background: #00ff957a;
+}
+
+tr[dimanOpertaion="infoscan"][coloredRow="true"]{
+    background: #ffbc0078;
+}
+
+tr[dimanOpertaion="courier return accept"][coloredRow="true"]{
+    background: #00c4ff57;
+}
+
+tr[dimanOpertaion="first return accept"][coloredRow="true"]{
+    background: #2900ff45;
+}
+
+tr[dimanOpertaion="first pallet accept"][coloredRow="true"]{
+    background: #f100ff52;
+}
+
+tr[dimanOpertaion="inventoryzation"][coloredRow="true"]{
+    background: #00fff578;
+    background: repeating-linear-gradient(90deg, #00fff578, #00fff578 10px, #00b8ff78 10px, #00b8ff78 20px);
+}
+
+tr[dimanOpertaion="error"][coloredRow="true"]{
+    background: #ff000052;
+}
+
+tr[dimanOpertaion="moved-lot"][coloredRow="true"]{
+    background: #b100fb5c;
+}
+
+tr[dimanOpertaion="ready-lot"][coloredRow="true"]{
+    background: #9bff0057;
+}
+
+tr[dimanOpertaion="accept-lot"][coloredRow="true"]{
+    background: #00f0ff47;
+}
+
+tr[dimanUser="pi-bot"][coloredRow="true"]{
+    color: #fff !important;
+    background: #e9e9e957;
+    backdrop-filter: invert(1);
+}
+
+.diman__scanLog__block th,
+.diman__scanLog__block td {
+    border: none !important;
+}
+
+label.diman__scanLog__checkBox__container{
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    z-index: 1;
+    width: fit-content;
+}
+
+label:has(input#dimanScanLog-option-99){
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: brightness(0.5) grayscale(1);
+    opacity: .5;
+}
+
+.diman__scanLog__checkBox__pin{
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 4px;
+    position: relative;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.diman__scanLog__checkBox__pin:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background: transparent;
+    transition: transform 300ms ease;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000;
+    transform: rotate(-90deg) translate(-50%) scale(0);
+    left: 40%;
+    top: 1px;
+}
+
+input.diman__scanLog__checkBox__input{
+    display: none;
+}
+
+input[type="checkbox"]:checked+.diman__scanLog__checkBox__pin{
+	background-color: #fc0;
+}
+
+.diman__scanLog__checkBox__container input[type="checkbox"]:checked+.diman__scanLog__checkBox__pin:before {
+    transform: rotate(-45deg) translate(-50%) scale(1.0);
+    transition: transform 300ms ease;
+}
+
+.diman__scanLog__checkBox__text{
+    user-select: none;
+    font-size: 14px;
+    color: #000;
+    margin-left: 8px;
+    text-wrap-mode: nowrap;
+}
+
+.diman__scanLogSettings__options__description{
+    color: #000;
+    font-weight: 600;
+}
+
+.diman__scanLogSettings__options__container{
+    display: flex;
+    gap: 30px;
+}
+
+.diman__scanLogSettings__options{
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+
+.diman__scanLogSettings__options{
+    overflow: hidden;
+}
+
+.diman__scanLogSettings__options__container__scrollbar{
+    overflow: auto;
+}
+
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar {
+    height: 30px;
+    width: 30px;
+    background: #e5e5e5;
+}
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-corner { 
+    background: #e5e5e5;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-track:horizontal {
+    border-radius: 10px / 30px;
+    background-color: #696969;
+    border-top: 13px solid #e5e5e5;
+    border-bottom: 13px solid #e5e5e5;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-track:hover {
+  background-color: #696969;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-track:active {
+  background-color: #696969;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 5px / 15px;
+    border-top: 10px solid #e5e5e5;
+    border-bottom: 10px solid #e5e5e5;
+    background-color: #000;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #464646;
+}
+
+.diman__scanLogSettings__options__container__scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: #464646;
+}

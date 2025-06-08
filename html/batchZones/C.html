@@ -1,0 +1,285 @@
+<style>
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.batchMapContainer{
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px -10px, rgb(234, 234, 234) 0px 0px 0px 4px;
+    min-width: 520px;
+    max-width: 520px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(229, 229, 229);
+    padding: 20px;
+    border-radius: 20px;
+    flex: 1 1 0%;
+    margin: var(--1eef7gn_1);
+    transition: box-shadow 200ms, transform 200ms;
+
+    /*! !*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.diman__batch{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 412px;
+}
+
+.diman__batchBlock{
+    width: 78px;
+    position: relative;
+}
+
+.diman__batchTitle{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: calc(100% + 2px);
+    font-size: 10em;
+    font-family: monospace;
+    font-weight: 800;
+    margin: unset;
+}
+
+div[container-type="defaultsection"] .diman__batchBlock{
+    width: 209px;
+}
+
+.diman__batchPreivewContainer{
+    display: flex;
+}
+
+.diman__batchPreivewContainer .diman__batchPreivewSection{
+    display: flex;
+    flex-flow: column;
+    border: 3px solid #464646;
+    border-radius: 6px;
+    background: #464646;
+    gap: 1px;
+    filter: drop-shadow(0px 6px 6px black);
+}
+.diman__batchPreivewContainer .diman__batchPreivewSectionRow{
+    display: flex;
+    gap: 1px;
+}
+.diman__batchPreivewContainer .diman__batchPreivewSectionCell{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    font-size: .7em;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.diman__batchPreivewSectionCell[diman-cell-active=true]{
+    border: 2px solid #fc0;
+    box-shadow: 0px 0px 10px 4px #000,0px 0px 0px 2px #fc0 inset , 0px 0px 4px 2px #000000 inset;
+    z-index: 99;
+    background: #424242;
+    font-weight: 800;
+    font-size: .9em;
+    color: #fff;
+    border-radius: 6px;
+    animation: dimanCellPulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes dimanCellPulse {
+    from{
+        transform: scale(.95);
+        filter: hue-rotate(0deg);
+    }
+    to{
+        transform: scale(1.05);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.diman__batch:has(.diman__batch-zoneOverflow){
+    height: 100%;
+}
+
+.diman__batch-zoneOverflow{
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+}
+
+*{
+    font-family: "YS Display", sans-serif;
+}
+
+.proection3DContainer-info{
+    font-family: "YS Display", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.proection3DContainer-info p{
+    margin: 0 0 1em;
+}
+
+</style>
+<body>
+    <div class="batchMapContainer">
+        <div class="proection3DContainer-info">
+            <p>Карта батчей для зоны – C</p>
+        </div>
+        <div class="diman__batch">
+            <div class="diman__batchPreivewContainer" container-type="uppersection">
+                <div class="diman__batchBlock"></div>
+                <div class="diman__batchPreivewSection" style="margin-right: 4px;">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="169">169</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="170">170</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="171">171</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="172">172</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="173">173</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="174">174</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="175">175</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="176">176</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="177">177</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="178">178</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="179">179</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="180">180</div>
+                    </div>
+                </div>
+                <div class="diman__batchPreivewSection">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="181">181</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="182">182</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="183">183</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="184">184</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="185">185</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="186">186</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="187">187</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="188">188</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="189">189</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="190">190</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="191">191</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="192">192</div>
+                    </div>
+                </div>
+                <div class="diman__batchBlock"></div>
+            </div>
+            <div class="diman__batchPreivewContainer" container-type="defaultsection">
+                <div class="diman__batchPreivewSection">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="160">160</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="164">164</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="168">168</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="159">159</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="163">163</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="167">167</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="158">158</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="162">162</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="166">166</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="157">157</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="161">161</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="165" diman-cell-active="true">165</div>
+                    </div>
+                </div>
+                <div class="diman__batchBlock">
+                    <div class="diman__batchTitle">C</div>
+                </div>
+                <div class="diman__batchPreivewSection">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="201">201</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="197">197</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="193">193</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="202">202</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="198">198</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="194">194</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="203">203</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="199">199</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="195">195</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="204">204</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="200">200</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="196">196</div>
+                    </div>
+                </div>
+            </div>
+            <div class="diman__batchPreivewContainer" container-type="defaultsection" style="margin-top: 4px;">
+                <div class="diman__batchPreivewSection">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="148">148</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="152">152</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="156">156</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="147">147</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="151">151</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="155">155</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="146">146</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="150">150</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="154">154</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="145">145</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="149">149</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="153">153</div>
+                    </div>
+                </div>
+                <div class="diman__batchBlock"></div>
+                <div class="diman__batchPreivewSection">
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="213">213</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="209">209</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="205">205</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="214">214</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="210">210</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="206">206</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="215">215</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="211">211</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="207">207</div>
+                    </div>
+                    <div class="diman__batchPreivewSectionRow">
+                        <div class="diman__batchPreivewSectionCell" dimancell="216">216</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="212">212</div>
+                        <div class="diman__batchPreivewSectionCell" dimancell="208">208</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,23 +1,46 @@
 {
   "manifest_version": 3,
   "name": "Яндекс Турбо ПИ",
-  "version": "1.7",
-  "description": "Расширение подсвечивает ячейку группировки, от Димана 💘",
-  "permissions": ["activeTab"],
+  "version": "3.11.0",
+  "version_name": "3.11.tests",
+  "description": "Расширение для получения дополнительной информации из ПИ 💛",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://logistics.market.yandex.ru/sorting-center/*"],
-      "js": ["content.js"],
-      "css": ["styles.css", "statusIcons.css"]
+      "matches": ["https://logistics.market.yandex.ru/*"],
+      "js": [
+        "libs/xlsx.full.min.js",
+        "js/content.js"
+      ],
+      "css": [
+        "css/styles.css",
+        "css/statusIcons.css",
+        "css/missedShiping.css",
+        "css/fos-traker.css",
+        "css/scanLog.css",
+        "css/scanLog__icons.css",
+        "css/proection3d.css",
+        "css/batchMap.css",
+        "css/inbounds.css",
+        "css/scanLog_sortables.css"
+      ]
     }
   ],
+  "web_accessible_resources": [{
+    "resources": ["libs/xlsx.full.min.js"],
+    "matches": ["<all_urls>"]
+  }],
   "icons": {
     "16": "img/piTurboIcon.png",
     "48": "img/piTurboIcon.png",
     "128": "img/piTurboIcon.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "html/popup.html",
     "default_icon": {
       "16": "img/piTurboIcon.png",
       "48": "img/piTurboIcon.png",
